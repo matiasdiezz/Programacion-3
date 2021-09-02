@@ -1,0 +1,24 @@
+.topBar{
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    background-color: gray;
+}
+
+.tituloTb{
+    color: white;
+    font-size: 30px;
+}
+.ordenarTb{
+    display: flex;
+    color: white;
+}
+
+.ordenarTb p{
+    margin-right: 10px;
+
+}
