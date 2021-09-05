@@ -1,12 +1,40 @@
-.characters-card {
-    padding: 10px;
-    margin-bottom: 20px;
-    width: 25%;
-    background-color: #fff;
-    border-radius: 5px;
-  }
-  
-  .characters-card img {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+.artist-card{
+  width: 20%;
+  height: auto;
+  margin: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.521);
+  border-radius: 0.8rem;
+  transition: all 0.5s ease;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.artist-card img{
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+}
+.artist-card h3{
+  margin: 1rem 0;
+  padding: 0;
+  font-size: 2rem;
+  color: black;
+}
+.more{
+  color: rgb(255, 115, 0);
+  width: 30%;
+  margin: 0 auto;
+}
+.more:hover, .active{
+  cursor: pointer;
+  background-color: rgb(255, 115, 0);
+  color: black;
+  border-radius: 0.5rem;
+}
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}

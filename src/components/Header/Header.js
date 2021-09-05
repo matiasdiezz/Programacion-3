@@ -8,12 +8,12 @@ function Header(){
                         Progra3
                     </h1>
                     <div className='ordenarTb'>
-                        <p>Ordenar</p>
+                        <p>Ordenar por</p>
                         <div className='botonesTb'>
-                        <button className='ascTb'>Asc</button>
-                        <button className='descTb'>Desc</button>
-                        <button className='stripsTb'><i class="fas fa-bars"></i></button>
-                        <button className='squareTb'><i class="far fa-square"></i></button>
+                            <button className='ascTb'><i class="fas fa-angle-double-up"></i></button>
+                            <button className='descTb'><i class="fas fa-angle-double-down"></i></button>
+                            <button className='stripsTb'><i class="fas fa-bars"></i></button>
+                            <button className='squareTb'><i class="far fa-square"></i></button>
                         </div>
                     </div>
                     <div className='searchTb'>
