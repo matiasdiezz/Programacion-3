@@ -28,7 +28,6 @@ class Tarjeta extends Component {
   }
 
   render() {
-    console.log(this.props.id);
   
   return (
     <div className="artist-card">
@@ -37,10 +36,12 @@ class Tarjeta extends Component {
       </div>
       <div className="artist-card-content">
         <h3 className='extra'>{this.props.nombre}</h3>
-        <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>Este artista actualmente esta en la posición {this.props.posicion}♞ del mundo</p>
+        <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>{this.props.nombre} actualmente esta en la posición {this.props.posicion}♞ del mundo</p>
       </div>
+      <div className="card-footer">
       <p className='more' onClick={()=>this.viewMore()}>{this.state.text}</p>
-      <button onClick={() => this.borrar(this.props.id)}>Borrar</button>
+      <button className='borrar' onClick={() => this.props.borrar(this.props.id)}><i className="fas fa-trash"></i></button>
+      </div>
     </div>
   );
   }
