@@ -6,10 +6,10 @@ import Artistas from "./Components/TarjetasArtistas/TarjetasArtistas";
 function App() {
   return (
     <div>
-      <div>
+      <div >
       <Header/>
       </div>
-      <div>
+      <div className='contenedor'>
       <Artistas/>
       </div>
     </div>
