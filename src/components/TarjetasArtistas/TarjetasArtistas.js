@@ -36,7 +36,7 @@ class Artistas extends Component {
   borrarTarjeta(id) {
     console.log(id);
     const resto = this.state.artistas.data.filter(
-      (artista) => artista.id != id
+      (artista) => artista.id !== id
     );
     this.setState({
       artistas: resto,
@@ -49,7 +49,9 @@ return (
       <>
         <div className="row align">
           {this.state.cargando === false ? (
-             <p>Cargando</p>
+            <p>
+              <i className='fas fa-spinner fa-spin'></i>
+            </p>
           ) : (
             this.state.artistas.data.map((artista) => (
               <Tarjeta
