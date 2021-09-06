@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import Artistas from "./components/TarjetasArtistas/TarjetasArtistas";
+import Header from "./Components/Header/Header";
+import Artistas from "./Components/TarjetasArtistas/TarjetasArtistas";
 
 
 function App() {
