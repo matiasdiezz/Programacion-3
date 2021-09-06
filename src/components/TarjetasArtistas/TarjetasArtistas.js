@@ -5,9 +5,8 @@ class Artistas extends Component {
   constructor() {
     super();
     this.state = {
-      originales: [],
       artistas: [],
-      
+      cargando: false,
     };
   }
 
@@ -19,8 +18,8 @@ class Artistas extends Component {
       .then((data) => {
         console.log(data);
         this.setState({
-          originales: data.results,
-          artistas: data.results,
+          cargando: true,
+          artistas: data,
         });
       })
       .catch((err) => console.log(err));
@@ -35,13 +34,25 @@ class Artistas extends Component {
   }
   render() {
     console.log("renderizado");
-    console.log(this.state.personajes);
+    console.log(this.state.artistas);
 return (
       <>
-        <div className="row card-container">
-          
-            <Tarjeta/>
-          
+        <div className="row align">
+          {this.state.cargando ? (
+            this.state.artistas.data.map((artista) => (
+              <Tarjeta
+                key={artista.id}
+                id={artista.id}
+                nombre={artista.name}
+                imagen={artista.picture_medium}
+                canciones={artista.nb_tracks}
+                followers={artista.nb_fan}
+                url={artista.link}
+              />
+            ))
+          ) : (
+            <h1>Cargando...</h1>
+          )}
         </div>
       </>
     );

@@ -5,7 +5,7 @@ function Header(){
     //    <!-- Topbar -->
 				<nav className='topBar'>
                     <h1 className='tituloTb'>
-                        Progra3
+                    <i class="fab fa-old-republic"></i>
                     </h1>
                     <div className='ordenarTb'>
                         <p>Ordenar por</p>
