@@ -1,6 +1,10 @@
 
 body{
-    background-image: url(../../../public/assets/images/fondo.jpg);
+    background-image: url(../images/fondo.jpg);
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .contenedor{

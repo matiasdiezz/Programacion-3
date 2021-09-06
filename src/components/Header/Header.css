@@ -17,6 +17,11 @@
     margin: auto 0;
     font-size: 50px;
 }
+.tituloTb :hover{
+    color: rgb(255, 115, 0);
+    cursor: pointer;
+}
+
 .ordenarTb{
     width: 30%;
     display: flex;

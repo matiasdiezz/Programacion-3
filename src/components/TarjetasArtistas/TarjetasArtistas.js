@@ -32,6 +32,16 @@ class Artistas extends Component {
   componentWillUnmount() {
     console.log("component wil unmount");
   }
+
+  borrarTarjeta(id) {
+    console.log(id);
+    const resto = this.state.artistas.filter(
+      (artista) => artista.id != id
+    );
+    this.setState({
+      artistas: resto,
+    });
+  }
   render() {
     console.log("renderizado");
     console.log(this.state.artistas);
