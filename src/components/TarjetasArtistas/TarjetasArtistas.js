@@ -45,9 +45,7 @@ return (
                 id={artista.id}
                 nombre={artista.name}
                 imagen={artista.picture_medium}
-                canciones={artista.nb_tracks}
-                followers={artista.nb_fan}
-                url={artista.link}
+                posicion={artista.position}
               />
             ))
           ) : (
