@@ -16,10 +16,9 @@ class Artistas extends Component {
     fetch(url)
       .then((respuesta) => respuesta.json())
       .then((data) => {
-        console.log(data);
         this.setState({
           cargando: true,
-          artistas: data,
+          artistas: data.data,
         });
       })
       .catch((err) => console.log(err));
@@ -35,37 +34,29 @@ class Artistas extends Component {
 
   borrarTarjeta(id) {
     console.log(id);
-    const resto = this.state.artistas.data.filter(
-      (artista) => artista.id !== id
-    );
+    const restoDeArtistas = this.state.artistas.filter((artista) => artista.id !== id);
     this.setState({
-      artistas: resto,
+      artistas: restoDeArtistas,
     });
   }
   render() {
-    console.log("renderizado");
     console.log(this.state.artistas);
 return (
       <>
         <div className="row align">
-          {this.state.cargando === false ? (
-            <p>
-              <i className='fas fa-spinner fa-spin'></i>
-            </p>
-          ) : (
-            this.state.artistas.data.map((artista) => (
+          {this.state.cargando === false ? 
+            <i className='fas fa-spinner fa-spin'></i>
+           : 
+            this.state.artistas.map((artista, i) => (
               <Tarjeta
-                key={artista.id}
-                id={artista.id}
-                nombre={artista.name}
-                imagen={artista.picture_medium}
-                posicion={artista.position}
-                borrar={(artistaBorrar) =>
-                  this.borrarTarjeta(artistaBorrar)
+                key={artista.id + i}
+                datosArtista={artista}
+                borrar={(ArtistaBorrar) =>
+                  this.borrarTarjeta(ArtistaBorrar)
                 }
               />
             ))
-          )}
+          }
         </div>
       </>
     );
