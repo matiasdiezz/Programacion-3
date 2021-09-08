@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./Tarjetas.css";
-
-
 class Tarjeta extends Component {
   
   constructor(props) {
@@ -18,15 +16,22 @@ class Tarjeta extends Component {
     if(this.state.viewMore){
       this.setState({
         viewMore: false,
-        text: 'Ver más'
+        text: 'Ver más',
+        selected: true,
       })
     } else {
       this.setState({
         viewMore: true,
-        text: 'ver menos'
+        text: 'Ver menos',
+        selected: false,
       })            
     }
   }
+  filtrarArtistas(textoAFiltrar){
+    let artistasFiltrados = this.props.artistas.filter((artista) => artista.name.toLowerCase().includes(textoAFiltrar.toLowerCase()));
+    console.log(artistasFiltrados);
+  }
+      
   
   render() {
     const {picture_big, name, position, id} = this.props.datosArtista;

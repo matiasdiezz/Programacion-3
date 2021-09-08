@@ -1,11 +1,28 @@
 import './Header.css';
-import React from 'react';
-function Header(){
+import React, {Component} from 'react';
+import SearchTb from './SearchTb/SearchTb';
+class Header extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            filterBy: ''
+        };
+    }
+    filtrarArtistas(textoAFiltrar) {
+        this.setState({
+            filterBy: textoAFiltrar
+        },()=>this.props.filtrarArtistas(textoAFiltrar)
+        );
+    }
+
+    render() {
     return(
     //    <!-- Topbar -->
 				<nav className='topBar'>
                     <h1 className='tituloTb'>
+                        <a href='/'>
                     <i className="fab fa-old-republic"></i>
+                    </a>
                     </h1>
                     <div className='ordenarTb'>
                         <p>Ordenar por</p>
@@ -17,12 +34,13 @@ function Header(){
                         </div>
                     </div>
                     <div className='searchTb'>
-                    <input type="text" placeholder="Search.."></input>
+                    <SearchTb filtrarArtistas={(params)=>this.filtrarArtistas(params)} />
                     </div>
 
                 </nav>
 	// <!-- End of Topbar -->  */
     )
+    }
 }
 
 export default Header
