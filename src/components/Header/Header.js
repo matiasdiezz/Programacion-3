@@ -1,21 +1,7 @@
 import './Header.css';
-import React, {Component} from 'react';
-import SearchTb from './SearchTb/SearchTb';
-class Header extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            filterBy: ''
-        };
-    }
-    filtrarArtistas(textoAFiltrar) {
-        this.setState({
-            filterBy: textoAFiltrar
-        },()=>this.props.filtrarArtistas(textoAFiltrar)
-        );
-    }
+import React from 'react';
 
-    render() {
+function Header(props) {
     return(
     //    <!-- Topbar -->
 				<nav className='topBar'>
@@ -33,14 +19,9 @@ class Header extends Component {
                             <button className='squareTb'><i className="far fa-square"></i></button>
                         </div>
                     </div>
-                    <div className='searchTb'>
-                    <SearchTb filtrarArtistas={(params)=>this.filtrarArtistas(params)} />
-                    </div>
-
                 </nav>
 	// <!-- End of Topbar -->  */
     )
-    }
 }
 
 export default Header

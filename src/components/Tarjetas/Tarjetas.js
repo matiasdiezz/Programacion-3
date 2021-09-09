@@ -7,9 +7,10 @@ class Tarjeta extends Component {
     this.state = {
       viewMore: false,
       text:'Ver más',
-      id: props.id,
+      datosArtista: props.datosArtista,
       selected: false,
     }
+    console.log(this.state);
   }
   
   viewMore(evento) {
@@ -27,15 +28,9 @@ class Tarjeta extends Component {
       })            
     }
   }
-  filtrarArtistas(textoAFiltrar){
-    let artistasFiltrados = this.props.artistas.filter((artista) => artista.name.toLowerCase().includes(textoAFiltrar.toLowerCase()));
-    console.log(artistasFiltrados);
-  }
-      
-  
+
   render() {
     const {picture_big, name, position, id} = this.props.datosArtista;
-  
   return (
     <div className="artist-card">
       <div className="artist-card-image">

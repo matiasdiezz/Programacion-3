@@ -9,6 +9,10 @@
   transition: all 0.5s ease;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.712);
 }
+.artist-card:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.712);
+}
 
 .artist-card img{
   width: 100%;
@@ -61,4 +65,23 @@
   background-color: rgb(255, 115, 0);
   color: black;
   border-radius: 0.5rem;
+}
+
+.cargarArtistas{
+  width: 100%;
+  height: 30px;
+  background-color: rgba(41, 41, 41, 0.747);
+  border-radius: 0.5rem;
+  border: none;
+  color: rgb(255, 115, 0);
+  font-size: 15px;
+  font-weight: bolder;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.5s ease;
+}
+.cargarArtistas:hover{
+  transform: scale(1.02);
+  height: 35px;
 }

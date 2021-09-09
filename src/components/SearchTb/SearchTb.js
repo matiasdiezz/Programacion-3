@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SearchTb.css'
 
 class Formulario extends Component {
     constructor(props) {
@@ -11,14 +12,18 @@ class Formulario extends Component {
     }
   
     controlarCambios(event) {
-      this.setState({filterBy: event.target.value});
+      this.setState({filterBy: event.target.value},
+      ()=> this.props.filtrarArtistas(this.state.filterBy)
+    );
     }
   
     render() {
       return (
+        <div className='searchTb'>
        <form onSubmit={(event)=>this.evitarSubmit(event)}>
          <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} placeholder='Buscar...'/>
        </form>
+       </div>
       );
     }
   }

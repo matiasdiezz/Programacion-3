@@ -1,3 +1,9 @@
 .align{
     justify-content: space-evenly;
 }
+#bodyTarjetas{
+    text-align: center;
+}
+.searchTb{
+    width: 100%;
+}
