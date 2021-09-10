@@ -1,35 +1,30 @@
-class Tarjeta extends Component {
-  constructor(props) {
+app 
+class App extends Component {
+  constructor (props) {
       super(props);
       this.state = {
-        viewMore: false,
-        text:'Ver más',
-        selected: false,
-    }
+          filterBy: ''
+      };
   }
-
-  viewMore(evento) {
-      if(this.state.viewMore){
-        this.setState({
-            viewMore: false,
-            text: 'Ver más'
-        })
-    } else {
-        this.setState({
-            viewMore: true,
-            text: 'ver menos'
-        })            
-    }
+  filtrarArtistas(textoAFiltrar) {
+      this.setState({
+          filterBy: textoAFiltrar
+      },()=>this.filtrarArtistas(textoAFiltrar)
+      );
   }
 
   render() {
   return (
-    <div className="artist-card"> 
-      <img src="assets/images/dummy-avatar.jpg" alt="imagen" />
-      <h3>Nombre Artista</h3>
-      <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>Las cosas del artista</p>
-      <p className='more' onClick={()=>this.viewMore()}>{this.state.text}</p>
+    <div>
+      <div>
+      <Header filterBy={(params)=>this.filtrarArtistas(params)}/>
+      </div>
+      <div className='contenedor'>
+      <Artistas/>
+      </div>
     </div>
   );
 }
 }
+
+export default App;

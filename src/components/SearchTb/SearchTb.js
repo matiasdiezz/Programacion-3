@@ -20,9 +20,9 @@ class Formulario extends Component {
     render() {
       return (
         <div className='searchTb'>
-       <form onSubmit={(event)=>this.evitarSubmit(event)}>
-         <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} placeholder='Buscar...'/>
-       </form>
+          <form onSubmit={(event)=>this.evitarSubmit(event)}>
+            <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} placeholder='Buscar...'/>
+          </form>
        </div>
       );
     }

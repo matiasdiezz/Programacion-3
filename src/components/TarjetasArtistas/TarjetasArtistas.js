@@ -73,9 +73,10 @@ class Artistas extends Component {
   
   render() {
     console.log(this.state.artistas);
+    
 return (
       <>
-            <SearchTb filtrarArtistas={(param)=>this.filtrarArtistas(param)} />
+        <SearchTb filtrarArtistas={(param)=>this.filtrarArtistas(param)} />
         <div className="row align" id='bodyTarjetas'>
           {this.state.cargando === false ? 
             <i className='fas fa-spinner fa-spin'></i>
