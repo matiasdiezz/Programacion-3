@@ -85,3 +85,29 @@
   transform: scale(1.02);
   height: 35px;
 }
+/*   Estilo de las tarjetas estiradas */
+
+.artist-card-large{
+  width: 40%;
+  height: auto;
+  margin: 12px;
+  padding: 0.5rem;
+  text-align: left;
+  background-color: rgba(41, 41, 41, 0.747);
+  border-radius: 0.8rem;
+  transition: all 0.5s ease;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.712);
+  display: flex;
+}
+.artist-card-image-large {
+
+  width: 30%;
+  margin: 10px;
+
+}
+.artist-card-image-large img{
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+}

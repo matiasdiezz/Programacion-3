@@ -3,7 +3,12 @@
 }
 #bodyTarjetas{
     text-align: center;
+  
 }
 .searchTb{
     width: 100%;
+}
+
+.row {
+    justify-content: center;
 }
