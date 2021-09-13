@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      changeOrder: false
+      changeOrder: false,
+      textoFiltrar:""
     }
     console.log(this.state);
   }
@@ -24,6 +25,10 @@ class App extends Component {
       })            
     }
   }
+
+  
+
+  
 
   render (){
   return (

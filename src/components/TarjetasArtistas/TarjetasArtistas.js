@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Tarjeta from '../Tarjetas/Tarjetas';
-import SearchTb from '../SearchTb/SearchTb';
 import './TarjetasArtistas'
 
 class Artistas extends Component {
@@ -78,7 +77,7 @@ class Artistas extends Component {
     
 return (
       <>
-        <SearchTb filtrarArtistas={(param)=>this.filtrarArtistas(param)} />
+        
         <div className="row align" id='bodyTarjetas'>
           {this.state.cargando === false ? 
             <i className='fas fa-spinner fa-spin'></i>

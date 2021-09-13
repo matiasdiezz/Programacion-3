@@ -1,5 +1,6 @@
 import './Header.css';
 import React from 'react';
+import SearchTb from '../SearchTb/SearchTb';
 
 function Header(props) {
     return(
@@ -10,6 +11,7 @@ function Header(props) {
                     <i className="fab fa-old-republic"></i>
                     </a>
                     </h1>
+                    <SearchTb filtrarArtistas={(param)=>this.filtrarArtistas(param)} />
                     <div className='ordenarTb'>
                         <p>Ordenar por</p>
                         <div className='botonesTb'>
@@ -18,6 +20,7 @@ function Header(props) {
                         </div>
                     </div>
                 </nav>
+                
 	// <!-- End of Topbar -->  */
     )
 }
