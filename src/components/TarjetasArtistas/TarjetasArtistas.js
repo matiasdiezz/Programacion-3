@@ -10,7 +10,6 @@ class Artistas extends Component {
       artistasFilter: [],
       artistas: [],
       cargando: false,
-      change: props.changeOrder
     };
   }
 
@@ -86,7 +85,7 @@ return (
            : 
             this.state.artistas.map((artista, i) => (
               <Tarjeta
-                changeOrder = {this.change}
+                changeOrder={this.props.changeOrder}
                 key={artista.id + i}
                 datosArtista={artista}
                 borrar={(ArtistaBorrar) =>

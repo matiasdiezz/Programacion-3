@@ -10,7 +10,6 @@ class Tarjeta extends Component {
       text:'Ver más',
       datosArtista: props.datosArtista,
       selected: false,
-      changeOrder: props.changeOrder
     }
     console.log(this.state);
   }
@@ -35,30 +34,22 @@ class Tarjeta extends Component {
     const {picture_big, name, position, id, changeOrder} = this.props.datosArtista;
   return (
     <>
-
-    <div className="artist-card">
-      <div className="artist-card-image">
-        <img src={picture_big} alt="artist" />
-      </div>
-      <div className="artist-card-content">
-        <h3 className='extra'>{name}</h3>
-        <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
-      </div>
-      <div className="card-footer">
-      <button className='borrar'>  
-      <i className="fas fa-chevron-left"></i>
-      </button>
-      <button className='borrar'> 
-      <i className="fas fa-chevron-right"></i>
-      </button>
-      <p className='more' onClick={()=>this.viewMore()}>{this.state.text}</p>
-      <button className='borrar' onClick={() => this.props.borrar(id)}><i className="fas fa-trash"></i></button>
-      </div>
-    </div>
-    
-
-    {/* Aca van las tarjetas estiradas 
-    <div className="artist-card-large">
+      {this.props.changeOrder === false ?
+       <div className="artist-card">
+        <div className="artist-card-image">
+          <img src={picture_big} alt="artist" />
+        </div>
+        <div className="artist-card-content">
+          <h3 className='extra'>{name}</h3>
+          <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
+        </div>
+        <div className="card-footer">
+        <p className='more' onClick={()=>this.viewMore()}>{this.state.text}</p>
+        <button className='borrar' onClick={() => this.props.borrar(id)}><i className="fas fa-trash"></i></button>
+        </div>
+      </div> 
+      :
+      <div className="artist-card-large">
     <div className="artist-card-image-large">
       <img src={picture_big} alt="artist" />
     </div>
@@ -67,17 +58,11 @@ class Tarjeta extends Component {
       <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
     </div>
     <div className="card-footer">
-    <button className='borrar'>  
-    <i className="fas fa-chevron-left"></i>
-    </button>
-    <button className='borrar'> 
-    <i className="fas fa-chevron-right"></i>
-    </button>
     <p className='more' onClick={()=>this.viewMore()}>{this.state.text}</p>
     <button className='borrar' onClick={() => this.props.borrar(id)}><i className="fas fa-trash"></i></button>
     </div>
-  </div>
-   */}
+  </div>  
+      }
   </>
  
   );
