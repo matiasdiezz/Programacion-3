@@ -13,7 +13,7 @@ class App extends Component {
     console.log(this.state);
   }
 
-  changeOrder(evento) {
+  changeOrder() {
     if(this.state.changeOrder){
       this.setState({
         changeOrder: false,
@@ -29,10 +29,10 @@ class App extends Component {
   return (
     <div>
       <div>
-      <Header changeOrder= {(param)=>this.changeOrder(param)} />
+      <Header changeOrder= {()=>this.changeOrder()} />
       </div>
       <div className='contenedor'>
-      <Artistas/>
+      <Artistas  changeOrder= {this.state.changeOrder} />
       </div>
     </div>
   );

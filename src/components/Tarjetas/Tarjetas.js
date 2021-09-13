@@ -10,6 +10,7 @@ class Tarjeta extends Component {
       text:'Ver más',
       datosArtista: props.datosArtista,
       selected: false,
+      changeOrder: props.changeOrder
     }
     console.log(this.state);
   }
@@ -31,10 +32,10 @@ class Tarjeta extends Component {
   }
 
   render() {
-    const {picture_big, name, position, id} = this.props.datosArtista;
+    const {picture_big, name, position, id, changeOrder} = this.props.datosArtista;
   return (
     <>
-    {/* 
+
     <div className="artist-card">
       <div className="artist-card-image">
         <img src={picture_big} alt="artist" />
@@ -54,8 +55,9 @@ class Tarjeta extends Component {
       <button className='borrar' onClick={() => this.props.borrar(id)}><i className="fas fa-trash"></i></button>
       </div>
     </div>
-    */}
-    {/* Aca van las tarjetas estiradas */}
+    
+
+    {/* Aca van las tarjetas estiradas 
     <div className="artist-card-large">
     <div className="artist-card-image-large">
       <img src={picture_big} alt="artist" />
@@ -75,7 +77,9 @@ class Tarjeta extends Component {
     <button className='borrar' onClick={() => this.props.borrar(id)}><i className="fas fa-trash"></i></button>
     </div>
   </div>
+   */}
   </>
+ 
   );
   
   }

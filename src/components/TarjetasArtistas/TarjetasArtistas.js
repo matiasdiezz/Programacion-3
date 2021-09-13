@@ -4,12 +4,13 @@ import SearchTb from '../SearchTb/SearchTb';
 import './TarjetasArtistas'
 
 class Artistas extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       artistasFilter: [],
       artistas: [],
       cargando: false,
+      change: props.changeOrder
     };
   }
 
@@ -24,13 +25,14 @@ class Artistas extends Component {
           cargando: true,
           artistas: data.data,
           artistasFilter: data.data,
-        });
+          });
       })
       .catch((err) => console.log(err));
   }
 
   agregarArtistas() {
     let cantidadNueva = this.state.artistas.length;
+    console.log(cantidadNueva);
     const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/artists?index="+ cantidadNueva +"&limit=10" ;
     fetch(url)
       .then((respuesta) => respuesta.json())
@@ -50,6 +52,7 @@ class Artistas extends Component {
       this.setState({
         artistas: restoDeArtistas,
       });
+      console.log(restoDeArtistas.length);
     }
   
     filtrarArtistas(textoFiltrar) {
@@ -83,6 +86,7 @@ return (
            : 
             this.state.artistas.map((artista, i) => (
               <Tarjeta
+                changeOrder = {this.change}
                 key={artista.id + i}
                 datosArtista={artista}
                 borrar={(ArtistaBorrar) =>
