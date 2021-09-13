@@ -11,12 +11,15 @@ function Header(props) {
                     <i className="fab fa-old-republic"></i>
                     </a>
                     </h1>
-                    <SearchTb filtrarArtistas={(param)=>this.filtrarArtistas(param)} />
+                    <SearchTb textoFiltrar={(texto)=>props.textoFiltrar(texto)} />
                     <div className='ordenarTb'>
-                        <p>Ordenar por</p>
+                        <p>Cambiar Orden</p>
                         <div className='botonesTb'>
-                            <button className='stripsTb'  onClick={()=>props.changeOrder()} ><i className="fas fa-bars"></i></button>
+                            {props.changeButton === false ?
                             <button className='squareTb'  onClick={()=>props.changeOrder()}><i className="far fa-square"></i></button>
+                            :
+                            <button className='stripsTb'  onClick={()=>props.changeOrder()} ><i className="fas fa-bars"></i></button>
+                            }
                         </div>
                     </div>
                 </nav>

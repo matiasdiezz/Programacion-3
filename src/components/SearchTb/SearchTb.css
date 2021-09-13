@@ -11,15 +11,15 @@
 }
 
 .searchTb form input{
-    background-color: rgba(48, 48, 48, 0.432);
-    height: 40px;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);;
     width: 100%;
+    background-color: rgba(165, 164, 164, 0.432);
+    height: 40px;
     margin: auto;
     border-radius: 5px;
     padding: 5px;
     border: none;
 }
+
 .searchTb form:hover{
     transform: scale(1.1);
 }

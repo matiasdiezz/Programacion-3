@@ -11,7 +11,6 @@ class Tarjeta extends Component {
       datosArtista: props.datosArtista,
       selected: false,
     }
-    console.log(this.state);
   }
   
   viewMore(evento) {
@@ -31,7 +30,7 @@ class Tarjeta extends Component {
   }
 
   render() {
-    const {picture_big, name, position, id, changeOrder} = this.props.datosArtista;
+    const {picture_big, name, position, id} = this.props.datosArtista;
   return (
     <>
       {this.props.changeOrder === false ?

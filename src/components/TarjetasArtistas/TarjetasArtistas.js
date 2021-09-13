@@ -9,6 +9,7 @@ class Artistas extends Component {
       artistasFilter: [],
       artistas: [],
       cargando: false,
+      textoFiltrar: ""
     };
   }
 
@@ -23,6 +24,7 @@ class Artistas extends Component {
           cargando: true,
           artistas: data.data,
           artistasFilter: data.data,
+          textoFiltrar: this.props.textoFiltrar,
           });
       })
       .catch((err) => console.log(err));
@@ -35,7 +37,6 @@ class Artistas extends Component {
     fetch(url)
       .then((respuesta) => respuesta.json())
       .then((data) => {
-        console.log(data);
         this.setState({
           artistas: this.state.artistas.concat(data.data),
           artistasFilter: this.state.artistasFilter.concat(data.data),
@@ -53,11 +54,10 @@ class Artistas extends Component {
       console.log(restoDeArtistas.length);
     }
   
-    filtrarArtistas(textoFiltrar) {
+    filtrarArtistas(texto) {
       let artistasFiltrados = this.state.artistasFilter.filter((artista) =>
-        artista.name.toLowerCase().includes(textoFiltrar.toLowerCase())
+        artista.name.toLowerCase().includes(texto.toLowerCase())
       );
-      //console.log(personajesFiltrados);
       this.setState({
         artistas: artistasFiltrados,
       });
@@ -73,8 +73,6 @@ class Artistas extends Component {
   }
   
   render() {
-    console.log(this.state.artistas);
-    
 return (
       <>
         
