@@ -75,8 +75,8 @@ class Artistas extends Component {
   render() {
 return (
       <>
-        
-        <div className="row align" id='bodyTarjetas'>
+        <div className='container-cards'>
+          <div className="row align">
           {this.state.cargando === false ? 
             <i className='fas fa-spinner fa-spin'></i>
            : 
@@ -91,11 +91,12 @@ return (
               />
             ))
           }
-        </div>
+          </div>
           {/* botón para cargar más artistas */}
           <button className="cargarArtistas" onClick={() => this.agregarArtistas()}>
-          <i className="fas fa-chevron-down"></i>
+            <i className="fas fa-chevron-down"></i>
           </button>
+        </div>
       </>
     );
   }
