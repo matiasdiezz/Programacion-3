@@ -52,12 +52,11 @@ class Tarjeta extends Component {
     <div className="artist-card-image-large">
       <img src={picture_big} alt="artist" />
     </div>
-    <div className="artist-card-content">
+    <div className="contentLarge">
       <h3 className='extra'>{name}</h3>
-      <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
+      <p className='extra'>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
     </div>
-    <div className="card-footer">
-    <p className='more' onClick={()=>this.viewMore()}>{this.state.text}</p>
+    <div className="footerLarge">
     <button className='borrar' onClick={() => this.props.borrar(id)}><i className="fas fa-trash"></i></button>
     </div>
   </div>  
