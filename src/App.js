@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       changeOrder: false,
-      textoFiltrar:""
+      filtrarArtistas:""
     }
     console.log(this.state);
   }
@@ -25,9 +25,9 @@ class App extends Component {
       })            
     }
   }
-  textoFiltrar(texto){
+  filtrarArtistas(texto){
     this.setState({
-      textoFiltrar: texto
+      filtrarArtistas: texto
     })
   }
 
@@ -39,11 +39,11 @@ class App extends Component {
   return (
     <div>
       <div>
-      <Header changeOrder= {()=>this.changeOrder()} textoFiltrar={(
-        texto)=>this.textoFiltrar(texto)} changeButton= {this.state.changeOrder}/>
+      <Header changeOrder= {()=>this.changeOrder()} filtrarArtistas={(
+        texto)=>this.filtrarArtistas(texto)} changeButton= {this.state.changeOrder}/>
       </div>
       <div className='contenedor'>
-      <Artistas  changeOrder= {this.state.changeOrder} textoFiltrar={this.state.textoFiltrar}/>
+      <Artistas  changeOrder= {this.state.changeOrder} filtrarArtistas={this.state.filtrarArtistas}/>
       </div>
     </div>
   );

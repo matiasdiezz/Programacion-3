@@ -11,7 +11,7 @@ function Header(props) {
                     <i className="fab fa-old-republic"></i>
                     </a>
                     </h1>
-                    <SearchTb textoFiltrar={(texto)=>props.textoFiltrar(texto)} />
+                    <SearchTb filtrarArtistas={(texto)=>props.filtrarArtistas(texto)} />
                     <div className='ordenarTb'>
                         <p>Cambiar Orden</p>
                         <div className='botonesTb'>

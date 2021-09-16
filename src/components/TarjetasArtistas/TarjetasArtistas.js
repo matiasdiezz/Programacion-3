@@ -24,7 +24,6 @@ class Artistas extends Component {
           cargando: true,
           artistas: data.data,
           artistasFilter: data.data,
-          textoFiltrar: this.props.textoFiltrar,
           });
       })
       .catch((err) => console.log(err));
@@ -46,7 +45,6 @@ class Artistas extends Component {
   }
   
     borrarTarjeta(id) {
-      console.log(id);
       const restoDeArtistas = this.state.artistas.filter((artista) => artista.id !== id);
       this.setState({
         artistas: restoDeArtistas,
@@ -55,9 +53,8 @@ class Artistas extends Component {
     }
   
     filtrarArtistas(texto) {
-      let artistasFiltrados = this.state.artistasFilter.filter((artista) =>
-        artista.name.toLowerCase().includes(texto.toLowerCase())
-      );
+      let artistasFiltrados = 
+      this.state.artistasFilter.filter((artista) => artista.name.toLowerCase().includes(this.props.filtrarArtistas.toLowerCase()));
       this.setState({
         artistas: artistasFiltrados,
       });
