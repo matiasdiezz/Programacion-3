@@ -44,7 +44,7 @@ class Tarjeta extends Component {
         </div>
         <div className="card-footer">
         <p className='more' onClick={()=>this.viewMore()}>{this.state.text}</p>
-        <button className='borrar' onClick={() => this.props.borrar(id)}><i className="fas fa-trash"></i></button>
+        <button className='borrar' onClick={() => this.props.borrarTarjeta(id)}><i className="fas fa-trash"></i></button>
         </div>
       </div> 
       :
@@ -57,7 +57,7 @@ class Tarjeta extends Component {
       <p className='extra'>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
     </div>
     <div className="footerLarge">
-    <button className='borrar' onClick={() => this.props.borrar(id)}><i className="fas fa-trash"></i></button>
+    <button className='borrar' onClick={() => this.props.borrarTarjeta(id)}><i className="fas fa-trash"></i></button>
     </div>
   </div>  
       }
