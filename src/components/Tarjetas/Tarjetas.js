@@ -11,7 +11,6 @@ class Tarjeta extends Component {
       datosArtista: props.datosArtista,
       selected: false,
     }
-    console.log(this.state);
   }
   
   viewMore(evento) {
@@ -31,7 +30,7 @@ class Tarjeta extends Component {
   }
 
   render() {
-    const {picture_big, name, position, id, changeOrder} = this.props.datosArtista;
+    const {picture_big, name, position, id} = this.props.datosArtista;
   return (
     <>
       {this.props.changeOrder === false ?
@@ -53,12 +52,11 @@ class Tarjeta extends Component {
     <div className="artist-card-image-large">
       <img src={picture_big} alt="artist" />
     </div>
-    <div className="artist-card-content">
+    <div className="contentLarge">
       <h3 className='extra'>{name}</h3>
-      <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
+      <p className='extra'>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
     </div>
-    <div className="card-footer">
-    <p className='more' onClick={()=>this.viewMore()}>{this.state.text}</p>
+    <div className="footerLarge">
     <button className='borrar' onClick={() => this.props.borrar(id)}><i className="fas fa-trash"></i></button>
     </div>
   </div>  

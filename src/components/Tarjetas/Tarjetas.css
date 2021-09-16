@@ -1,7 +1,8 @@
 .artist-card{
-  width: 18%;
+  width: 15rem;
   height: auto;
-  margin: 12px;
+  margin: auto;
+  margin-bottom: 20px;
   padding: 0.5rem;
   text-align: center;
   background-color: rgba(41, 41, 41, 0.747);
@@ -89,7 +90,7 @@
 
 .artist-card-large{
   width: 100%;
-  height: auto;
+  height: 200px;
   margin: 12px;
   padding: 0.5rem;
   text-align: left;
@@ -100,14 +101,40 @@
   display: flex;
 }
 .artist-card-image-large {
-
-  width: 30%;
+  width: 165px;
   margin: 10px;
-
 }
 .artist-card-image-large img{
   width: 100%;
   height: auto;
   border-radius: 0.8rem;
   box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+.contentLarge{
+  margin: auto 0;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  transition: all 0.5s ease;
+}
+.artist-card-large:hover{
+  transform: scale(1.02);
+}
+.footerLarge{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40%;
+}
+.footerLarge .borrar{
+  color: rgb(255, 115, 0);
+  width: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+}
+.footerLarge .borrar:hover{
+  cursor: pointer;
+  background-color: rgb(255, 115, 0);
+  color: black;
+  border-radius: 0.5rem;
 }
