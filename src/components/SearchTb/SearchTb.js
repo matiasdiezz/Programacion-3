@@ -13,7 +13,7 @@ class Formulario extends Component {
   
     controlarCambios(event) {
       this.setState({filterBy: event.target.value},
-      ()=> this.props.textoFiltrar(this.state.filterBy)
+      ()=> this.props.filtrarArtistas(this.state.filterBy)
     );
     }
   
