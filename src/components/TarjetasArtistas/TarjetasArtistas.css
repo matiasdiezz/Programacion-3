@@ -9,3 +9,6 @@
 .container .row {
     justify-content: center;
 }
+.container-cards{
+    width: 100%;
+}

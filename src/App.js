@@ -52,6 +52,7 @@ class App extends Component {
       const restoDeArtistas = this.state.artistas.filter((artista) => artista.id !== id);
       this.setState({
         artistas: restoDeArtistas,
+        artistasFilter: restoDeArtistas,
       });
       console.log(restoDeArtistas.length);
     }
@@ -89,22 +90,18 @@ class App extends Component {
   return (
     <>
       <header>
-      <Header changeOrder= {()=>this.changeOrder()} filtrarArtistas={(
+        <Header changeOrder= {()=>this.changeOrder()} filtrarArtistas={(
         texto)=>this.filtrarArtistas(texto)} changeButton= {this.state.changeOrder}/>
       </header>
       <main className='contenedor'>
-      <Artistas   artistasFilter= {this.state.artistasFilter}   agregarArtistas= {()=>this.agregarArtistas()}    borrarTarjeta= {()=>this.borrarTarjeta()}     filtrarArtistas= {()=>this.filtrarArtistas()}   cargando= {this.state.cargando}  artistas= {this.state.artistas} changeOrder= {this.state.changeOrder} />
+        <Artistas   artistasFilter= {this.state.artistasFilter}   borrarTarjeta= {(id)=>this.borrarTarjeta(id)}  agregarArtistas={()=>this.agregarArtistas()}   filtrarArtistas= {()=>this.filtrarArtistas()}   cargando= {this.state.cargando}  artistas= {this.state.artistas} changeOrder= {this.state.changeOrder} />    
       </main>
       <footer>
         <Footer/> 
       </footer>
     
-    </>
-  );
+     </>
+    );
+  }
 }
-}
-
-
-
-
 export default App;

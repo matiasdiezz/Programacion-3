@@ -15,27 +15,29 @@ class Artistas extends Component {
   render() {
 return (
       <>
-        <div className='container-cards'>
-          <div className="row align">
+        <section className='container-cards'>
+          <article className="row align">
           {this.props.cargando === false ? 
+            <div className='loader'>
             <i className='fas fa-spinner fa-spin'></i>
+            </div>
            : 
             this.props.artistas.map((artista, i) => (
               <Tarjeta
                 changeOrder={this.props.changeOrder}
                 key={artista.id + i}
                 datosArtista={artista}
-                borrarTarjeta= {()=>this.props.borrarTarjeta()}
+                borrarTarjeta= {(id)=>this.props.borrarTarjeta(id)}
               />
             ))
           }
-          </div>
-          {/* botón para cargar más artistas */}
-          <button className="cargarArtistas" onClick={(Artistas) =>
+          </article>
+           {/* botón para cargar más artistas */}
+      <button className="cargarArtistas" onClick={(Artistas) =>
                   this.props.agregarArtistas(Artistas) }>
             <i className="fas fa-chevron-down"></i>
           </button>
-        </div>
+        </section>
       </>
     );
   }

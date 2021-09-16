@@ -32,7 +32,7 @@ class Header extends Component {
                         <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} placeholder='Buscar...'/>
                     </form>
                     </div>
-                    <div className='ordenarTb'>
+                    <section className='ordenarTb'>
                         <p>Cambiar Orden</p>
                         <div className='botonesTb'>
                             {this.props.changeButton === false ?
@@ -41,7 +41,7 @@ class Header extends Component {
                             <button className='stripsTb'  onClick={()=>this.props.changeOrder()} ><i className="fas fa-bars"></i></button>
                             }
                         </div>
-                    </div>
+                    </section>
                 </nav>
             
 
