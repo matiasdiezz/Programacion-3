@@ -57,7 +57,7 @@ class Artistas extends Component {
       this.state.artistasFilter.filter((artista) => artista.name.toLowerCase().includes(this.props.filtrarArtistas.toLowerCase()));
       this.setState({
         artistas: artistasFiltrados,
-      });
+      }); 
     }
 
   componentDidUpdate() {

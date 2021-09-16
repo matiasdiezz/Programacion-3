@@ -1,0 +1,16 @@
+.footer{
+    width: 98%;
+    margin: auto;
+    color: white;
+    background-color:  rgba(41, 41, 41, 0.747) ;
+    justify-content: space-evenly;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);;
+    margin-bottom: 5px;
+}
+
+.footer h1{
+    font-size: medium;
+    margin-top: 5px;
+}

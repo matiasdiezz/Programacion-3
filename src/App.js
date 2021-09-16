@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Header from "./Components/Header/Header";
 import Artistas from "./Components/TarjetasArtistas/TarjetasArtistas";
+import Footer from "./Components/Footer/Footer";
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
     console.log(this.state);
   }
 
+  
   changeOrder() {
     if(this.state.changeOrder){
       this.setState({
@@ -25,27 +27,29 @@ class App extends Component {
       })            
     }
   }
+
   filtrarArtistas(texto){
     this.setState({
       filtrarArtistas: texto
     })
   }
 
-  
-
-  
 
   render (){
   return (
-    <div>
-      <div>
+    <>
+      <header>
       <Header changeOrder= {()=>this.changeOrder()} filtrarArtistas={(
         texto)=>this.filtrarArtistas(texto)} changeButton= {this.state.changeOrder}/>
-      </div>
-      <div className='contenedor'>
+      </header>
+      <main className='contenedor'>
       <Artistas  changeOrder= {this.state.changeOrder} filtrarArtistas={this.state.filtrarArtistas}/>
-      </div>
-    </div>
+      </main>
+      <footer>
+        <Footer/> 
+      </footer>
+    
+    </>
   );
 }
 }
