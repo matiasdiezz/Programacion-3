@@ -35,7 +35,7 @@ class Tarjeta extends Component {
   return (
     <>
       {this.props.changeOrder === false ?
-       <div className="artist-card">
+       <div className="artist-card">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
         <div className="artist-card-image">
           <img src={picture_big} alt="artist" />
         </div>
@@ -65,8 +65,7 @@ class Tarjeta extends Component {
       }
   </>
  
-  );
-  
+   );
   }
 }
 
