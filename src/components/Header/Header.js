@@ -14,24 +14,27 @@ class Header extends Component {
     controlarCambios(event) {
       this.setState({filterBy: event.target.value},
       ()=> this.props.filtrarArtistas(this.state.filterBy)
-    );
+      );
     }
   
     render()
     {
     return(
     //    <!-- Topbar -->
-				<nav className='topBar'>
+				        <nav className='topBar'>
                     <h1 className='tituloTb'>
                         <a href='/'>
                     <i className="fab fa-old-republic"></i>
                     </a>
                     </h1>
-                    <div className='searchTb'>
+                    {/* <!-- Search Bar --> */}
+                    <section className='searchTb'>
                         <form onSubmit={(event)=>this.evitarSubmit(event)}>
                         <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} placeholder='Buscar...'/>
                     </form>
-                    </div>
+                    </section>
+                    {/* <!-- End Search Bar --> */}
+                    {/* <!-- User Bar --> */}
                     <section className='ordenarTb'>
                         <p>Cambiar Orden</p>
                         <div className='botonesTb'>
@@ -42,9 +45,8 @@ class Header extends Component {
                             }
                         </div>
                     </section>
+                    {/* <!-- End User Bar --> */}
                 </nav>
-            
-
 	// <!-- End of Topbar -->  */
     )
 

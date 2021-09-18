@@ -13,7 +13,7 @@ class Tarjeta extends Component {
     }
   }
   
-  viewMore(evento) {
+  viewMore() {
     if(this.state.viewMore){
       this.setState({
         viewMore: false,
@@ -35,6 +35,7 @@ class Tarjeta extends Component {
     <>
       {this.props.changeOrder === false ?
        <article className="artist-card">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+        {/*tarjetas vertical*/}
         <div className="artist-card-image">
           <img src={picture_big} alt="artist" />
         </div>
@@ -49,17 +50,18 @@ class Tarjeta extends Component {
       </article> 
       :
       <article className="artist-card-large">
-    <div className="artist-card-image-large">
-      <img src={picture_big} alt="artist" />
-    </div>
-    <div className="contentLarge">
-      <h3 className='extra'>{name}</h3>
-      <p className='extra'>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
-    </div>
-    <div className="footerLarge">
-    <button className='borrar' onClick={() => this.props.borrarTarjeta(id)}><i className="fas fa-trash"></i></button>
-    </div>
-  </article>  
+        {/*tarjetas horizontal*/}
+        <div className="artist-card-image-large">
+          <img src={picture_big} alt="artist" />
+        </div>
+        <div className="contentLarge">
+          <h3 className='extra'>{name}</h3>
+          <p className='extra'>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
+        </div>
+        <div className="footerLarge">
+          <button className='borrar' onClick={() => this.props.borrarTarjeta(id)}><i className="fas fa-trash"></i></button>
+        </div>
+      </article>  
       }
   </>
  
