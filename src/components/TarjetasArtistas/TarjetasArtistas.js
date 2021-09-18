@@ -33,7 +33,7 @@ return (
           }
           </article>
            {/* botón para cargar más artistas */}
-      <button className="cargarArtistas" onClick={(Artistas) =>
+          <button className="cargarArtistas" onClick={(Artistas) =>
                   this.props.agregarArtistas(Artistas) }>
             <i className="fas fa-chevron-down"></i>
           </button>

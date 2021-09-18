@@ -12,7 +12,6 @@ class App extends Component {
       artistasFilter: [],
       artistas: [],
       cargando: false,
-      textoFiltrar: "",
       changeOrder: false
     }
     console.log(this.state);
@@ -33,6 +32,7 @@ class App extends Component {
       })
       .catch((err) => console.log(err));
   }
+
   agregarArtistas() {
     let cantidadNueva = this.state.artistas.length;
     console.log(cantidadNueva);
@@ -48,22 +48,20 @@ class App extends Component {
       .catch((err) => console.log(err));
   }
   
-    borrarTarjeta(id) {
-      const restoDeArtistas = this.state.artistas.filter((artista) => artista.id !== id);
-      this.setState({
-        artistas: restoDeArtistas,
-        artistasFilter: restoDeArtistas,
-      });
-      console.log(restoDeArtistas.length);
-    }
+  borrarTarjeta(id) {
+    const restoDeArtistas = this.state.artistas.filter((artista) => artista.id !== id);
+    this.setState({
+      artistas: restoDeArtistas,
+      artistasFilter: restoDeArtistas,
+    });
+  }
   
-    filtrarArtistas(texto) {
-      let artistasFiltrados = 
-      this.state.artistasFilter.filter((artista) => artista.name.toLowerCase().includes(texto.toLowerCase()));
-      this.setState({
-        artistas: artistasFiltrados,
-      }); 
-    }
+  filtrarArtistas(texto) {
+    let artistasFiltrados = this.state.artistasFilter.filter((artista) => artista.name.toLowerCase().includes(texto.toLowerCase()));
+    this.setState({
+      artistas: artistasFiltrados,
+    }); 
+  }
 
   componentDidUpdate() {
     console.log("component did update");
@@ -94,7 +92,7 @@ class App extends Component {
         texto)=>this.filtrarArtistas(texto)} changeButton= {this.state.changeOrder}/>
       </header>
       <main className='contenedor'>
-        <Artistas   artistasFilter= {this.state.artistasFilter}   borrarTarjeta= {(id)=>this.borrarTarjeta(id)}  agregarArtistas={()=>this.agregarArtistas()}   filtrarArtistas= {()=>this.filtrarArtistas()}   cargando= {this.state.cargando}  artistas= {this.state.artistas} changeOrder= {this.state.changeOrder} />    
+        <Artistas borrarTarjeta= {(id)=>this.borrarTarjeta(id)}  agregarArtistas={()=>this.agregarArtistas()}  cargando= {this.state.cargando}  artistas= {this.state.artistas} changeOrder= {this.state.changeOrder} />    
       </main>
       <footer>
         <Footer/> 
