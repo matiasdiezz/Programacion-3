@@ -9,7 +9,7 @@ class Tarjeta extends Component {
       viewMore: false,
       text:'Ver más',
       datosArtista: props.datosArtista,
-      selected: false,
+    
     }
   }
   
@@ -18,13 +18,13 @@ class Tarjeta extends Component {
       this.setState({
         viewMore: false,
         text: 'Ver más',
-        selected: true,
+      
       })
     } else {
       this.setState({
         viewMore: true,
         text: 'Ver menos',
-        selected: false,
+        
       })            
     }
   }
