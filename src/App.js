@@ -38,7 +38,7 @@ class App extends Component {
     console.log(cantidadNueva);
     const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/artists?index="+ cantidadNueva +"&limit=10" ;
     fetch(url)
-      .then((respuesta) => respuesta.json())
+      .then(respuesta => respuesta.json())
       .then((data) => {
         this.setState({
           artistas: this.state.artistas.concat(data.data),
@@ -64,8 +64,7 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    console.log("component did update");
-    
+    console.log("component did update"); 
   }
 
   componentWillUnmount() {
