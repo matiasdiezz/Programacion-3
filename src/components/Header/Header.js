@@ -19,38 +19,34 @@ class Header extends Component {
   
     render()
     {
-    return(
-    //    <!-- Topbar -->
-				        <nav className='topBar'>
-                    <h1 className='tituloTb'>
-                        <a href='/'>
+      return(
+            <nav className='topBar'>
+                <h1 className='tituloTb'>
+                  <a href='/'>
                     <i className="fab fa-old-republic"></i>
-                    </a>
-                    </h1>
-                    {/* <!-- Search Bar --> */}
-                    <section className='searchTb'>
-                        <form onSubmit={(event)=>this.evitarSubmit(event)}>
-                        <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} placeholder='Buscar...'/>
-                    </form>
-                    </section>
-                    {/* <!-- End Search Bar --> */}
-                    {/* <!-- User Bar --> */}
-                    <section className='ordenarTb'>
-                        <p>Cambiar Orden</p>
-                        <div className='botonesTb'>
-                            {this.props.changeButton === false ?
-                            <button className='squareTb'  onClick={()=>this.props.changeOrder()}><i className="far fa-square"></i></button>
-                            :
-                            <button className='stripsTb'  onClick={()=>this.props.changeOrder()} ><i className="fas fa-bars"></i></button>
-                            }
-                        </div>
-                    </section>
-                    {/* <!-- End User Bar --> */}
-                </nav>
-	// <!-- End of Topbar -->  */
-    )
-
-    }
-}
+                  </a>
+                </h1>
+                {/* <!-- Search Bar --> */}
+                <section className='searchTb'>
+                  <form onSubmit={(event)=>this.evitarSubmit(event)}>
+                    <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} placeholder='Buscar...'/>
+                  </form>
+                </section>
+                {/* <!-- End Search Bar --> */}
+                {/* <!-- User Bar --> */}
+                <section className='ordenarTb'>
+                    <p>Cambiar Orden</p>
+                    <div className='botonesTb'>
+                        {this.props.changeButton === false ?
+                        <button className='squareTb'  onClick={()=>this.props.changeOrder()}><i className="far fa-square"></i></button>
+                        :
+                        <button className='stripsTb'  onClick={()=>this.props.changeOrder()} ><i className="fas fa-bars"></i></button>
+                        }
+                    </div>
+                </section>
+                {/* <!-- End User Bar --> */}
+            </nav>
+          )}
+      }
 
 export default Header

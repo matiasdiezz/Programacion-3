@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import "./Tarjetas.css";
 
 class Tarjeta extends Component {
-  
   constructor(props) {
     super(props);
     this.state = {
       viewMore: false,
       text:'Ver más',
-      datosArtista: props.datosArtista,
-    
     }
   }
   
@@ -18,13 +15,11 @@ class Tarjeta extends Component {
       this.setState({
         viewMore: false,
         text: 'Ver más',
-      
       })
     } else {
       this.setState({
         viewMore: true,
         text: 'Ver menos',
-        
       })            
     }
   }
@@ -35,7 +30,7 @@ class Tarjeta extends Component {
     <>
       {this.props.changeOrder === false ?
        <article className="artist-card">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-        {/*tarjetas vertical*/}
+        {/*tarjetas verticales*/}
         <div className="artist-card-image">
           <img src={picture_big} alt="artist" />
         </div>
@@ -44,13 +39,13 @@ class Tarjeta extends Component {
           <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>{name} actualmente esta en la posición <strong>{position}</strong> del mundo</p>
         </div>
         <div className="card-footer">
-        <p className='more' onClick={()=>this.viewMore()}>{this.state.text}</p>
-        <button className='borrar' onClick={() => this.props.borrarTarjeta(id)}><i className="fas fa-trash"></i></button>
+          <p className='more' onClick={()=>this.viewMore()}>{this.state.text}</p>
+          <button className='borrar' onClick={() => this.props.borrarTarjeta(id)}><i className="fas fa-trash"></i></button>
         </div>
       </article> 
       :
       <article className="artist-card-large">
-        {/*tarjetas horizontal*/}
+        {/*tarjetas horizontales*/}
         <div className="artist-card-image-large">
           <img src={picture_big} alt="artist" />
         </div>
